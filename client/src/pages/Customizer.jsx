@@ -11,7 +11,24 @@ import { FilePicker, ColorPicker, Tab, AiPicker, CustomButton } from "../compone
 
 
 const Customizer = () => {
-  const snap = useSnapshot(state)
+const snap = useSnapshot(state)
+
+const [file, setFile] = useState('')
+
+const [prompt, setPrompt] = useState('')
+const [generatingImg, setGeneratingImg] = useState(false)
+
+const [activeEditorTab, setActiveEditorTab] = useState('')
+const [activeFiltertab, setActiveFilterTab] = useState({
+  logoShirt: true,
+  stylishShirt: false,
+})
+
+const generateTabContent= () => {
+
+}
+
+  
   return (
    <AnimatePresence>
       {!snap.intro && (
@@ -22,7 +39,7 @@ const Customizer = () => {
           {...slideAnimation('left')}
           >
             <div className="flex items-center min-h-screen">
-                <div className="editorTabs-container tabs">
+                <div className="editortabs-container tabs">
                   {EditorTabs.map((tab) => (
                     < Tab 
                       key={tab.name}
