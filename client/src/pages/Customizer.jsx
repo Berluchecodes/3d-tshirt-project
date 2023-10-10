@@ -85,14 +85,16 @@ const handleDecals = (type, result) => {
 
 const handleActiveFilterTab= (tabName) => {
   switch(tabName){
-  case 'logoShirt':
-    state.isLogoTexture = !activeEditorTab[tabName]
+  case "logoShirt":
+    state.isLogoTexture = !activeFiltertab[tabName]
     break 
-  case 'stylishShirt':
-    state.isFullTexture = !activeEditorTab[tabName]
+  case "stylishShirt":
+    state.isFullTexture = !activeFiltertab[tabName]
+    break
     default:
     state.isLogoTexture = true  
     state.isFullTexture = false
+    break
 }
 
 setActiveFilterTab((prevState) => {
